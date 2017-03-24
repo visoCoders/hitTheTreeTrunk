@@ -1,0 +1,18 @@
+.boomstam {
+	width: 50px;
+	height: 200px;
+	position: relative;
+	margin: 10px 20px;
+}
+
+.black {
+	background-color: black;
+}
+
+.red {
+	background-color: red;
+}
+
+.score {
+	padding-left: 20px;
+}
