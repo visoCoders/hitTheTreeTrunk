@@ -109,6 +109,39 @@ $(function () {
             }
         }
     });
+
+    var scoreAmount = 0;
+    var score = document.querySelector('.score');
+
+    var player = {
+        name: '',
+        score: 0,
+        dead: false
+    }
+
+    score.innerHTML = 'Score: ' + scoreAmount;
+
+    document.querySelector('.boomstam.black').addEventListener('click', function(){
+        addScore(5);
+    });
+
+    document.querySelector('.boomstam.red').addEventListener('click', function(){
+        dead();
+    });
+
+    function dead(){
+        console.log('you died');
+        score.innerHTML = 'You died! Score: ' + scoreAmount;
+        player.score = scoreAmount;
+        player.dead = true;
+        scoreAmount = 0;
+        console.log(player);
+    }
+
+    function addScore(points){
+        scoreAmount = scoreAmount += points;
+        score.innerHTML = 'Score: ' + scoreAmount;
+    }
  
     /**
      * This method is optional. If the server wasn't able to respond to the
