@@ -70,36 +70,25 @@ wsServer.on('request', function(request) {
     var connection = request.accept(null, request.origin); 
     // we need to know client index to remove them on 'close' event
     var index = clients.push(connection) - 1;
-    var userName = false;
-    var userColor = false;
  
     console.log((new Date()) + ' Connection accepted.');
  
-    // send back chat history
-    if (history.length > 0) {
-        connection.sendUTF(JSON.stringify( { type: 'history', data: history} ));
-    }
- 
     // user sent some message
     connection.on('message', function(message) {
-            // broadcast message to all connected clients
-            //var json = JSON.stringify({ type:'message', data: message });
-            for (var i=0; i < clients.length; i++) {
-                //clients[i].sendUTF(json);
-                clients[i].sendUTF(message);
-            }
-        });
+        var json = JSON.stringify({ data : message });
+        for (var i=0; i < clients.length; i++) {
+            clients[i].sendUTF(json);
+        }
+    });
  
     // user disconnected
     connection.on('close', function(connection) {
-        if (userName !== false && userColor !== false) {
+        
             console.log((new Date()) + " Peer "
                 + connection.remoteAddress + " disconnected.");
             // remove user from the list of connected clients
             clients.splice(index, 1);
-            // push back user's color to be reused by another user
-            colors.push(userColor);
-        }
+        
     });
  
 });
