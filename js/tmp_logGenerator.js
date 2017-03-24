@@ -36,3 +36,25 @@ setInterval(function(){
   }
 
 }, 1000);
+
+//Die if skip log
+setInterval(function(){
+
+  var lastRow = $logContainer.find('.row:last-child');
+  var children = lastRow.children();
+
+  if(lastRow.offset().top > window.outerHeight){
+
+    for(i=0;i<children.length;i++){
+
+      if($(children[i]).hasClass('target')){
+
+        alert('u dood');
+
+      }
+
+    }
+
+  }
+
+}, 1000);
