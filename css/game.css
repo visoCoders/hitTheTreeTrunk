@@ -16,14 +16,28 @@
 .score {
 	padding-left: 20px;
 }
-     body {
+body {
         overflow: hidden;
         background-image: url(../img/background.svg);
         background-position: center;
 				background-attachment: fixed;
         background-repeat: repeat;
         background-size: 20%;
-      }
+        /* Animation */
+         
+        background-image: url(../img/background.svg);
+        background-position: 5px 0px;
+        background-repeat: repeat-x;
+
+        animation: animatedBackground 1s linear infinite;
+
+}
+@keyframes animatedBackground {
+0% { background-position: 0 0; }
+50%{ background-position: 0 100%; }
+100%{ background-position: 0 0; }
+}
+    
 
       div .log {
         height: 100px;
