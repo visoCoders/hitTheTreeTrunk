@@ -1,6 +1,7 @@
 
 var $logContainer = $('.log-container');
 
+//Spawn Logs
 setInterval(function(){
 
   var randomNum = Math.floor((Math.random() * 6));
@@ -11,7 +12,7 @@ setInterval(function(){
   for(i=1;i<=5;i++){
 
     var badNum = Math.floor((Math.random() * 6));
-    
+
     row += '<div class="log '+((randomNum == i)?'target ':'')+((randomNum == badNum && !outputtedABadOne)?'bad':'')+'"></div>';
     outputtedABadOne = (randomNum == badNum);
 
@@ -20,12 +21,11 @@ setInterval(function(){
 
   $logContainer.prepend(row);
 
-}, 950);
+}, 3000);
 
-
+//Clear logs out of screen
 setInterval(function(){
 
-  //Clearing logs out of screen
   var lastRow = $logContainer.find('.row:last-child');
   console.log(lastRow);
 
