@@ -1,7 +1,7 @@
 var gamestatus = true;
 var log = document.querySelector('.block');
 
-while(gamestatus){
+if(gamestatus){
 
   log.style.top += 1;
 
