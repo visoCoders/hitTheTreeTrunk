@@ -92,7 +92,7 @@ $(function () {
      * Send mesage when user presses Enter key
      */
     input.keydown(function(e) {
-            e.preventDefault();
+           
             if (e.keyCode === 13) {
             var msg = $(this).val();
             if (!msg) {
