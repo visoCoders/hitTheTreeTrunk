@@ -3,17 +3,21 @@ var $logContainer = $('.log-container');
 
 setInterval(function(){
 
-  var randomNum = Math.floor((Math.random() * 6) + 1);
+  var randomNum = Math.floor((Math.random() * 6));
+  var badNum = Math.floor((Math.random() * 6));
   var row = '<div class="row clearfix">';
 
+  var outputtedABadOne = false;
+
   for(i=1;i<=5;i++){
-    row += '<div class="log '+((randomNum == i)?'target':'')+((randomNum == 0)?'bad':'')'"></div>';
+    row += '<div class="log '+((randomNum == i)?'target ':'')+((randomNum == badNum && !outputtedABadOne)?'bad':'')+'"></div>';
+    outputtedABadOne = (randomNum == badNum);
   }
   row += "</div>";
 
   $logContainer.prepend(row);
 
-}, 1000);
+}, 950);
 
 
 setInterval(function(){

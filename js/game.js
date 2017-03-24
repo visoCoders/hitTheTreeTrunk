@@ -64,6 +64,7 @@ $(function () {
     };
  
     // most important part - incoming messages
+    /*
     connection.onmessage = function (message) {
         // try to parse JSON message. Because we know that the server always returns
         // JSON this should work without any problem but we should make sure that
@@ -96,6 +97,7 @@ $(function () {
             console.log('Hmm..., I\'ve never seen JSON like this: ', json);
         }
     };
+    */
  
     /**
      * Send mesage when user presses Enter key
@@ -105,15 +107,18 @@ $(function () {
         if (e.keyCode === 13) {
             var msg = $(this).val();
             player.name = msg;
+            console.log(player);
+            status.text('Welcome ' + player.name);
             if (!msg) {
                 return;
             }
             // send the message as an ordinary text
-            connection.send(msg);
+            //connection.send(msg);
             $(this).val('');
             // disable the input field to make the user wait until server
             // sends back response
             input.attr('disabled', 'disabled');
+            input.hide();
  
             // we know that the first message sent from a user their name
             if (myName === false) {
@@ -141,12 +146,14 @@ $(function () {
         player.dead = true;
         scoreAmount = 0;
         connection.send(player);
+
+        console.log(player);
     }
 
     function addScore(points){
         scoreAmount = scoreAmount += points;
         score.innerHTML = 'Score: ' + scoreAmount;
-        connection.send(player);
+        //connection.send(player);
     }
  
     /**
