@@ -3,14 +3,20 @@ body{
 	font-size: 16px;
 }
 
+.wrapper{
+	background: url(../img/scoreBoard.svg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 
 .scoreBox{
 	max-width: 40%;
-	background-color: #ddd;
-	height: 300px;
+	height: 100vh;
 	border-radius: 5px;
 	margin: auto;
-	margin-top: 1.5%;
 }
 
 h1{
@@ -18,23 +24,33 @@ h1{
 	font-weight: bold;
 	font-size: 50px;
 	text-align: center;
+	color: #dccb38;
+}
+
+h2{
+	font-size: 2.4em;
+	text-align: center;
+	margin-top: 85%;
+	color: #dccb38;
 }
 
 table{
 	margin:auto;
-	margin-top: 3%;
-	width: 
+	width: 100%;
 }
 
 th{
-	margin-right: 10%;
+	margin-right: 15%;
+	padding-top: 10%;
 	text-transform: uppercase;
 	width: 30%;
 	font-size: 1.3em;
 	text-align: center;
+	color: #dccb38;
 }
 
 td{
 	text-align: center;
 	padding-top: 2%;
+	font-size: 1.2em;
 }
