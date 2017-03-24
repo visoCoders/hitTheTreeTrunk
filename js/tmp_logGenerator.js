@@ -21,7 +21,7 @@ setInterval(function(){
 
   $logContainer.prepend(row);
 
-}, 3000);
+}, 950);
 
 //Clear logs out of screen
 setInterval(function(){
