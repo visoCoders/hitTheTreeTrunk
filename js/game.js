@@ -33,7 +33,7 @@ $(function () {
     }
  
     // open connection
-    var connection = new WebSocket('ws://192.168.11.248:1337'); //192.168.0.227
+    var connection = new WebSocket('ws://localhost:1337'); //192.168.0.227    
  
     connection.onopen = function () {
         // first we want users to enter their names
@@ -135,6 +135,7 @@ $(function () {
 
         if($(e.target).hasClass('target')){
             addScore(5);   
+            $(e.target).css("opacity" , 0.2);
         }else if($(e.target).hasClass('bad')){
              location.reload();
             dead();
@@ -148,7 +149,7 @@ $(function () {
         player.score = scoreAmount;
         player.dead = true;
         scoreAmount = 0;
-        connection.send(player);
+        connection.send(JSON.stringify(player));
 
         console.log(player);
     }
@@ -156,7 +157,7 @@ $(function () {
     function addScore(points){
         scoreAmount = scoreAmount += points;
         score.innerHTML = 'Score: ' + scoreAmount;
-        connection.send(player);
+        connection.send(JSON.stringify(player));
     }
  
     /**

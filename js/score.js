@@ -48,6 +48,8 @@ $(function () {
         // the massage is not chunked or otherwise damaged.
         try {
             var json = JSON.parse(message.data);
+            var player = JSON.parse(json.data.utf8Data);
+            console.log(player.score);
         } catch (e) {
             console.log('This doesn\'t look like a valid JSON: ', message.data);
             return;
