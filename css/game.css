@@ -16,3 +16,53 @@
 .score {
 	padding-left: 20px;
 }
+     body {
+        overflow: hidden;
+        background-image: url(../img/background.svg);
+        background-position: center;
+        background-repeat: repeat;
+        background-size: 20%;
+      }
+
+      div .log {
+        height: 100px;
+        width: 15%;
+        float: left;
+        margin: 15px 2.5%;
+      }
+
+      .target {
+        background-image: url(../img/boomstam.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      .bad {
+        background-image: url(../img/rotteboom.svg) !important;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      .clearfix:after {
+         content: " "; /* Older browser do not support empty content */
+         visibility: hidden;
+         display: block;
+         height: 0;
+         clear: both;
+      }
+
+
+      .log-container {
+        width: 100%;
+        overflow: hidden;
+        height: 100%;
+      }
+
+    #user{
+    	color:#fff;
+    	background-color:blue;
+    	width:20%;
+    	padding:2%;
+    
+    	
+    }

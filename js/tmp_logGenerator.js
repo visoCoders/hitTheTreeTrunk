@@ -1,4 +1,5 @@
 
+
 var $logContainer = $('.log-container');
 
 setInterval(function(){
@@ -8,9 +9,8 @@ setInterval(function(){
   var row = '<div class="row clearfix">';
 
   var outputtedABadOne = false;
-
   for(i=1;i<=5;i++){
-    row += '<div class="log '+((randomNum == i)?'target ':'')+((randomNum == badNum && !outputtedABadOne)?'bad':'')+'"></div>';
+    row += '<div class="log clearfix '+((randomNum == i)?'target ':'')+((randomNum == badNum && !outputtedABadOne)?'bad':'')+'"></div>';
     outputtedABadOne = (randomNum == badNum);
   }
   row += "</div>";
