@@ -21,7 +21,7 @@ setInterval(function(){
 
   $logContainer.prepend(row);
 
-}, 3000);
+}, 950);
 
 //Clear logs out of screen
 setInterval(function(){
@@ -32,6 +32,28 @@ setInterval(function(){
   if(lastRow.offset().top > window.outerHeight){
 
     lastRow.remove();
+
+  }
+
+}, 1000);
+
+//Die if skip log
+setInterval(function(){
+
+  var lastRow = $logContainer.find('.row:last-child');
+  var children = lastRow.children();
+
+  if(lastRow.offset().top > window.outerHeight){
+
+    for(i=0;i<children.length;i++){
+
+      if($(children[i]).hasClass('target')){
+
+        alert('u dood');
+
+      }
+
+    }
 
   }
 
