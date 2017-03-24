@@ -1,8 +1,7 @@
-var gamestatus = true;
-var log = document.querySelector('.block');
+$('.log-container').prepend('')
 
-if(gamestatus){
+setInterval(function(){
 
-  log.style.top += 1;
+Math.floor((Math.random() * 6) + 1);
 
-}
+}, 500);
