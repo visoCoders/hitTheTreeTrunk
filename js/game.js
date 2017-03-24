@@ -131,12 +131,15 @@ $(function () {
 
     score.innerHTML = 'Score: ' + scoreAmount;
 
-    document.querySelector('.boomstam.black').addEventListener('click', function(){
-        addScore(5);
-    });
+    $('.log-container').on('click', function(e){
 
-    document.querySelector('.boomstam.red').addEventListener('click', function(){
-        dead();
+        if($(e.target).hasClass('target')){
+            addScore(5);   
+        }else if($(e.target).hasClass('bad')){
+             location.reload();
+            dead();
+
+        }
     });
 
     function dead(){
