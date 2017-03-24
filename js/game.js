@@ -135,6 +135,7 @@ $(function () {
 
         if($(e.target).hasClass('target')){
             addScore(5);   
+            $(e.target).css("opacity" , 0.2);
         }else if($(e.target).hasClass('bad')){
              location.reload();
             dead();
