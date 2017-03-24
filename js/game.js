@@ -30,6 +30,7 @@ $(function () {
         // first we want users to enter their names
         input.removeAttr('disabled');
         status.text('Choose name:');
+        console.log('u bent geconnecteerd welkom');
     };
  
     connection.onerror = function (error) {
@@ -91,7 +92,8 @@ $(function () {
      * Send mesage when user presses Enter key
      */
     input.keydown(function(e) {
-        if (e.keyCode === 13) {
+         
+            if (e.keyCode === 13) {
             var msg = $(this).val();
             if (!msg) {
                 return;
@@ -107,7 +109,9 @@ $(function () {
             if (myName === false) {
                 myName = msg;
             }
+
         }
+
     });
  
     /**
