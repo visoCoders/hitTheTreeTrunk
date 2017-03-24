@@ -49,13 +49,21 @@ $(function () {
         try {
             var json = JSON.parse(message.data);
             var player = JSON.parse(json.data.utf8Data);
-            console.log(player.score);
+            
+            if($('.scoreBox td[data-user="'+player.name+'"]').length > 0){
+              $('.scoreBox td[data-user="'+player.name+'"]').parent().remove();  
+            }
+
+            $('.scoreBox .rows').append('<tr>'+
+                            '<td data-user="'+player.name+'">'+player.name+'</td>'+
+                            '<td>'+player.score+'</td>'+
+                            '<td></td>'+
+                        '</tr>');
+
         } catch (e) {
             console.log('This doesn\'t look like a valid JSON: ', message.data);
             return;
         }
- 
-        console.log(json);
     };
  
     
