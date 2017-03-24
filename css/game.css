@@ -20,6 +20,7 @@
         overflow: hidden;
         background-image: url(../img/background.svg);
         background-position: center;
+				background-attachment: fixed;
         background-repeat: repeat;
         background-size: 20%;
       }
@@ -63,6 +64,6 @@
     	background-color:blue;
     	width:20%;
     	padding:2%;
-    
-    	
+
+
     }
