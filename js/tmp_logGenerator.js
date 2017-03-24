@@ -1,5 +1,5 @@
 var gamestatus = true;
-var log = document.querySelector('');
+var log = document.querySelector('.block');
 
 while(gamestatus){
 
