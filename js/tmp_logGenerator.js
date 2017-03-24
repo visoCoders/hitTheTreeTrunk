@@ -13,4 +13,14 @@ setInterval(function(){
 
   $logContainer.prepend(row);
 
+  //Clearing logs out of screen
+  var allExistingLogs = document.querySelectorAll('.trunk');
+
+  for(i=0;i<allExistingLogs.length;i++){
+
+    console.log(allExistingLogs[i]);
+
+
+  }
+
 }, 1000);
