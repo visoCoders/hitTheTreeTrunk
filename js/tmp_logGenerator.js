@@ -4,22 +4,27 @@ var $logContainer = $('.log-container');
 setInterval(function(){
 
   var randomNum = Math.floor((Math.random() * 6) + 1);
-  var row = '<div class="row">';
+  var row = '<div class="row clearfix">';
 
   for(i=1;i<=5;i++){
-    row += '<div class="trunk log '+((randomNum == i)?'target':'')+'"></div>';
+    row += '<div class="log '+((randomNum == i)?'target':'')+((randomNum == 0)?'bad':'')'"></div>';
   }
   row += "</div>";
 
   $logContainer.prepend(row);
 
+}, 1000);
+
+
+setInterval(function(){
+
   //Clearing logs out of screen
-  var allExistingLogs = document.querySelectorAll('.trunk');
+  var lastRow = $logContainer.find('.row:last-child');
+  console.log(lastRow);
 
-  for(i=0;i<allExistingLogs.length;i++){
+  if(lastRow.offset().top > window.outerHeight){
 
-    console.log(allExistingLogs[i]);
-
+    lastRow.remove();
 
   }
 
