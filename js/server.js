@@ -83,9 +83,10 @@ wsServer.on('request', function(request) {
     // user sent some message
     connection.on('message', function(message) {
             // broadcast message to all connected clients
-            var json = JSON.stringify({ type:'message', data: message });
+            //var json = JSON.stringify({ type:'message', data: message });
             for (var i=0; i < clients.length; i++) {
-                clients[i].sendUTF(json);
+                //clients[i].sendUTF(json);
+                clients[i].sendUTF(message);
             }
         });
  
