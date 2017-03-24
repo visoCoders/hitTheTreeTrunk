@@ -2,23 +2,36 @@
 <html>
   <head>
     <style>
+      * {
+        margin: 0;
+      }
+
+      body {
+        overflow: hidden;
+      }
+
       div .log {
         height: 100px;
         width: 15%;
-        background-color: #000000;
         float: left;
-        margin-left: 2.5%;
-        margin-right: 2.5%;
+        margin: 2.5%;
+      }
+
+      .target {
+        background-image: url(../img/boomstam-02.svg);
+        background-repeat: no-repeat;
+        background-position: center;
       }
 
       .bad {
-        background-color: green !important;
+        background-image: url(../img/boomstam-01.svg) !important;
+        background-repeat: no-repeat;
+        background-position: center;
       }
 
 
       .log-container {
         width: 100%;
-        background-color: red;
         overflow: hidden;
         height: 100%;
       }
@@ -27,11 +40,11 @@
   <body>
     <div class="log-container">
       <div class="row">
-        <div class="trunk log bad"></div>
-        <div class="trunk log"></div>
-        <div class="trunk log"></div>
-        <div class="trunk log"></div>
-        <div class="trunk log"></div>
+        <div class="log bad"></div>
+        <div class="log"></div>
+        <div class="log"></div>
+        <div class="log"></div>
+        <div class="log"></div>
       </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
