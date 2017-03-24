@@ -1,0 +1,40 @@
+body{
+	font-family: 'Concert One', cursive;
+	font-size: 16px;
+}
+
+
+.scoreBox{
+	max-width: 40%;
+	background-color: #ddd;
+	height: 300px;
+	border-radius: 5px;
+	margin: auto;
+	margin-top: 1.5%;
+}
+
+h1{
+	padding-top: 2%;
+	font-weight: bold;
+	font-size: 50px;
+	text-align: center;
+}
+
+table{
+	margin:auto;
+	margin-top: 3%;
+	width: 
+}
+
+th{
+	margin-right: 10%;
+	text-transform: uppercase;
+	width: 30%;
+	font-size: 1.3em;
+	text-align: center;
+}
+
+td{
+	text-align: center;
+	padding-top: 2%;
+}
