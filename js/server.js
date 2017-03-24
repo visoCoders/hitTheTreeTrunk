@@ -82,17 +82,10 @@ wsServer.on('request', function(request) {
  
     // user sent some message
     connection.on('message', function(message) {
-        if (message.type === 'utf8') { // accept only text
-                 
-                var obj = {
-                    user: 'Naam'
-                };
- 
-                // broadcast message to all connected clients
-                var json = JSON.stringify({ type:'message', data: obj });
-                for (var i=0; i < clients.length; i++) {
-                    clients[i].sendUTF(json);
-                }
+            // broadcast message to all connected clients
+            var json = JSON.stringify({ type:'message', data: message });
+            for (var i=0; i < clients.length; i++) {
+                clients[i].sendUTF(json);
             }
         });
  

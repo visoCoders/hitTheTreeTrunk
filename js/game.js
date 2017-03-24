@@ -153,7 +153,7 @@ $(function () {
     function addScore(points){
         scoreAmount = scoreAmount += points;
         score.innerHTML = 'Score: ' + scoreAmount;
-        //connection.send(player);
+        connection.send(player);
     }
  
     /**
