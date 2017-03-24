@@ -157,6 +157,7 @@ $(function () {
     function addScore(points){
         scoreAmount = scoreAmount += points;
         score.innerHTML = 'Score: ' + scoreAmount;
+        player.score = scoreAmount;
         connection.send(JSON.stringify(player));
     }
  
