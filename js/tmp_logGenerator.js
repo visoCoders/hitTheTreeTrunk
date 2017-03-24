@@ -5,30 +5,14 @@ setInterval(function(){
 
   var randomNum = Math.floor((Math.random() * 6) + 1);
 
-  var row = "";
-  row += "<div class='log-container'>";
+  var row = '<div class="row">';
 
   for(i=1;i<=5;i++){
-
-    row += "<div class='trunk log" + i + "'></div>";
-
-    if(randomNum == i){
-
-      $('.trunk .log' + i).addClass('bad');
-
-    }
-
+    row += '<div class="trunk log '+(randomNum == i)?'target':''+'"></div>';
   }
 
+  row += "</div>";
 
-  $logContainer.prepend('');
+  $logContainer.prepend(row);
 
 }, 500);
-
-
-row += "<div class='trunk log1'></div>";
-row += "<div class='trunk log2'></div>";
-row += "<div class='trunk log3'></div>";
-row += "<div class='trunk log4'></div>";
-row += "<div class='trunk log5'></div>";
-row += "</div>";
