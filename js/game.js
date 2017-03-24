@@ -1,11 +1,11 @@
 $(function () {
     "use strict";
-
+ 
     // for better performance - to avoid searching in DOM
     var content = $('#content');
     var input = $('#input');
     var status = $('#status');
-
+ 
     // my color assigned by the server
     var myColor = false;
     // my name sent to the server
@@ -19,10 +19,10 @@ $(function () {
         score: 0,
         dead: false
     }
-
+ 
     // if user is running mozilla then use it's built-in WebSocket
     window.WebSocket = window.WebSocket || window.MozWebSocket;
-
+ 
     // if browser doesn't support WebSocket, just show some notification and exit
     if (!window.WebSocket) {
         content.html($('<p>', { text: 'Sorry, but your browser doesn\'t '
@@ -31,17 +31,17 @@ $(function () {
         $('span').hide();
         return;
     }
-
+ 
     // open connection
-    var connection = new WebSocket('ws://192.168.11.248:1337'); //192.168.0.227
-
+    var connection = new WebSocket('ws://localhost:1337'); //192.168.0.227    
+ 
     connection.onopen = function () {
         // first we want users to enter their names
         input.removeAttr('disabled');
         status.text('Choose name:');
         console.log('u bent geconnecteerd welkom');
     };
-
+ 
     connection.onerror = function (error) {
         // just in there were some problems with conenction...
         content.html($('<p>', { text: 'Sorry, but there\'s some problem with your '
@@ -62,7 +62,7 @@ $(function () {
             colors.push(myColor);
         }
     };
-
+ 
     // most important part - incoming messages
     /*
     connection.onmessage = function (message) {
@@ -75,7 +75,7 @@ $(function () {
             console.log('This doesn\'t look like a valid JSON: ', message.data);
             return;
         }
-
+ 
         // NOTE: if you're not sure about the JSON structure
         // check the server source code above
         if (json.type === 'color') { // first response from the server with user's color
@@ -98,7 +98,7 @@ $(function () {
         }
     };
     */
-
+ 
     /**
      * Send mesage when user presses Enter key
      */
@@ -119,7 +119,7 @@ $(function () {
             // sends back response
             input.attr('disabled', 'disabled');
             input.hide();
-
+ 
             // we know that the first message sent from a user their name
             if (myName === false) {
                 myName = msg;
@@ -134,8 +134,7 @@ $(function () {
     $('.log-container').on('click', function(e){
 
         if($(e.target).hasClass('target')){
-            addScore(5);
-            $(e.target).removeClass('target');
+            addScore(5);   
         }else if($(e.target).hasClass('bad')){
              location.reload();
             dead();
@@ -149,7 +148,7 @@ $(function () {
         player.score = scoreAmount;
         player.dead = true;
         scoreAmount = 0;
-        connection.send(player);
+        connection.send(JSON.stringify(player));
 
         console.log(player);
     }
@@ -157,9 +156,9 @@ $(function () {
     function addScore(points){
         scoreAmount = scoreAmount += points;
         score.innerHTML = 'Score: ' + scoreAmount;
-        connection.send(player);
+        connection.send(JSON.stringify(player));
     }
-
+ 
     /**
      * This method is optional. If the server wasn't able to respond to the
      * in 3 seconds then show some error message to notify the user that
@@ -172,7 +171,7 @@ $(function () {
                                                  + 'with the WebSocket server.');
         }
     }, 3000);
-
+ 
     /**
      * Add message to the chat window
      */
