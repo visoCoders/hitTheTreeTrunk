@@ -18,15 +18,23 @@
       }
 
       .target {
-        background-image: url(../img/boomstam-02.svg);
+        background-image: url(../img/boomstam.svg);
         background-repeat: no-repeat;
         background-position: center;
       }
 
       .bad {
-        background-image: url(../img/boomstam-01.svg) !important;
+        background-image: url(../img/rotteboom.svg) !important;
         background-repeat: no-repeat;
         background-position: center;
+      }
+
+      .clearfix:after {
+         content: " "; /* Older browser do not support empty content */
+         visibility: hidden;
+         display: block;
+         height: 0;
+         clear: both;
       }
 
 
@@ -39,7 +47,7 @@
   </head>
   <body>
     <div class="log-container">
-      <div class="row">
+      <div class="row clearfix">
         <div class="log bad"></div>
         <div class="log"></div>
         <div class="log"></div>
