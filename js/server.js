@@ -83,28 +83,10 @@ wsServer.on('request', function(request) {
     // user sent some message
     connection.on('message', function(message) {
         if (message.type === 'utf8') { // accept only text
-            if (userName === false) { // first message sent by user is their name
-                // remember user name
-                userName = htmlEntities(message.utf8Data);
-                // get random color and send it back to the user
-                userColor = colors.shift();
-                connection.sendUTF(JSON.stringify({ type:'color', data: userColor }));
-                console.log((new Date()) + ' User is known as: ' + userName
-                            + ' with ' + userColor + ' color.');
- 
-            } else { // log and broadcast the message
-                console.log((new Date()) + ' Received Message from '
-                            + userName + ': ' + message.utf8Data);
                  
-                // we want to keep history of all sent messages
                 var obj = {
-                    time: (new Date()).getTime(),
-                    text: htmlEntities(message.utf8Data),
-                    author: userName,
-                    color: userColor
+                    user: 'Naam'
                 };
-                history.push(obj);
-                history = history.slice(-100);
  
                 // broadcast message to all connected clients
                 var json = JSON.stringify({ type:'message', data: obj });
@@ -112,8 +94,7 @@ wsServer.on('request', function(request) {
                     clients[i].sendUTF(json);
                 }
             }
-        }
-    });
+        });
  
     // user disconnected
     connection.on('close', function(connection) {
