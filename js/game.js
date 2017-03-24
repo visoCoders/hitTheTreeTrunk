@@ -10,6 +10,15 @@ $(function () {
     var myColor = false;
     // my name sent to the server
     var myName = false;
+
+    //game settings
+    var scoreAmount = 0;
+    var score = document.querySelector('.score');
+    var player = {
+        name: '',
+        score: 0,
+        dead: false
+    }
  
     // if user is running mozilla then use it's built-in WebSocket
     window.WebSocket = window.WebSocket || window.MozWebSocket;
@@ -92,9 +101,10 @@ $(function () {
      * Send mesage when user presses Enter key
      */
     input.keydown(function(e) {
-            e.preventDefault();
-            if (e.keyCode === 13) {
+
+        if (e.keyCode === 13) {
             var msg = $(this).val();
+            player.name = msg;
             if (!msg) {
                 return;
             }
@@ -114,15 +124,6 @@ $(function () {
 
     });
 
-    var scoreAmount = 0;
-    var score = document.querySelector('.score');
-
-    var player = {
-        name: '',
-        score: 0,
-        dead: false
-    }
-
     score.innerHTML = 'Score: ' + scoreAmount;
 
     document.querySelector('.boomstam.black').addEventListener('click', function(){
@@ -139,12 +140,13 @@ $(function () {
         player.score = scoreAmount;
         player.dead = true;
         scoreAmount = 0;
-        console.log(player);
+        connection.send(player);
     }
 
     function addScore(points){
         scoreAmount = scoreAmount += points;
         score.innerHTML = 'Score: ' + scoreAmount;
+        connection.send(player);
     }
  
     /**
