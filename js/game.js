@@ -149,6 +149,7 @@ $(function () {
     });
 
     function dead(){
+        document.querySelector('.deadSound').play();
         score.innerHTML = 'You died! Score: ' + scoreAmount;
         player.score = scoreAmount;
         player.dead = true;
