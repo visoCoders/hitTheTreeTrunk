@@ -40,7 +40,6 @@ $(function () {
         if(naam !=null){
             console.log(naam);
             player.name = naam;
-            status.text('Welcome ' + naam);
 
         }
         // first we want users to enter their names
