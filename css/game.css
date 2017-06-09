@@ -14,7 +14,7 @@
 }
 
 .score {
-	position: absolute; right: 0; top: 0;
+	position: absolute; right: 0; top: 0; z-index: 99;
 }
 body {
         overflow: hidden;
@@ -70,18 +70,31 @@ body {
          clear: both;
       }
 
-
+			html, body, .wrapper{ height: 100%; }
       .log-container {
         width: 100%;
         overflow: hidden;
         height: 100%;
+				position: relative;
       }
+
+			.log-container .row{ position: absolute; transform: translate3d(0,0,0); width: 100%;
+				animation-name: rowmove;
+		    animation-duration: 4s;
+				animation-timing-function: linear;
+				animation-fill-mode: forwards;
+			}
+
+			@keyframes rowmove {
+			    from { transform: translate3d(0,0,0); }
+			    to { transform: translate3d(0,100vh,0); }
+			}
 
     #user{
     	color:#fff;
     	background-color:blue;
     	width:20%;
     	padding:2%;
-			position: absolute;left: 0; top: 0;
+			position: absolute;left: 0; top: 0; z-index: 99;
 
     }
