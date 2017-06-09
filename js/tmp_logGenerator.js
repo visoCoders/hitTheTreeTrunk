@@ -22,7 +22,7 @@ setInterval(function(){
 
   $logContainer.prepend(row);
 
-  animationDuration*=0.95;
+  animationDuration*=0.99;
   console.log(animationDuration);
 
   var $firstchild = $logContainer.find('.row:first-child');
