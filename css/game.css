@@ -4,15 +4,12 @@
 	position: relative;
 	margin: 10px 20px;
 }
-
 .black {
 	background-color: black;
 }
-
 .red {
 	background-color: red;
 }
-
 .score {
 	position: absolute; right: -10px; bottom: -10px; z-index: 99; font-size: 2em; font-family: 'Concert One', cursive; color: white; background: #7299A8; padding: 20px; z-index: -1;border:  10px solid white;
         border-radius: 10px;
@@ -34,9 +31,9 @@ body {
         overflow: hidden;
         background-image: url(../img/background.svg);
         background-position: center;
-				background-attachment: fixed;
-        background-repeat: repeat;
-        background-size: 20%;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: 100%;
         /* Animation */
 
         animation: animatedBackground 1s linear infinite;
@@ -51,66 +48,64 @@ body {
 }*/
 
 
-      div .log {
+div .log {
         height: 125px;
         width: 15%;
         float: left;
         margin: 15px 2.5%;
-      }
+}
 
-      .target {
-        background-image: url(../img/boomstam.svg);
-        background-repeat: no-repeat;
-        background-position: center;
-      }
+.target {
+    background-image: url(../img/boomstam.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
 
-      .bad {
-        background-image: url(../img/rotteboom.svg) !important;
-        background-repeat: no-repeat;
-        background-position: center;
-      }
-      .clicked{
+.bad {
+    background-image: url(../img/rotteboom.svg) !important;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.clicked{
 
-      }
-      .clearfix:after {
-         content: " "; /* Older browser do not support empty content */
-         visibility: hidden;
-         display: block;
-         height: 0;
-         clear: both;
-      }
+}
+.clearfix:after {
+     content: " "; /* Older browser do not support empty content */
+     visibility: hidden;
+     display: block;
+     height: 0;
+     clear: both;
+}
 
-			html, body, .wrapper{ height: 100%; }
-      .log-container {
-        width: 100%;
-        overflow: hidden;
-        height: 100%;
-				position: relative;
-      }
+        html, body, .wrapper{ height: 100%; }
+  .log-container {
+    width: 100%;
+    overflow: hidden;
+    height: 100%;  position: relative;
+  }
 
-			.log-container .row{ position: absolute; transform: translate3d(0,0,0); width: 100%;
-				animation-name: rowmove;
-		    animation-duration: 4s;
-				animation-timing-function: linear;
-				animation-fill-mode: forwards;
-			}
+.log-container .row{ position: absolute; transform: translate3d(0,0,0); width: 100%;
+    animation-name: rowmove;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
 
-			@keyframes rowmove {
-			    from { transform: translate3d(0,0,0); }
-			    to { transform: translate3d(0,100vh,0); }
-			}
+@keyframes rowmove {
+    from { transform: translate3d(0,0,0); }
+    to { transform: translate3d(0,100vh,0); }
+}
 
-    #user{
-        font-family:'Concert One', cursive;
-        font-size: 2em;
-    	color:#fff;
-    	width:auto;
-        padding:20px;
-        background-color:#7299A8;
-        position: absolute;left: -10px; bottom: -10px; z-index: 99;
-        text-align:center;
-        border:  10px solid white;
-        border-radius: 10px;
+#user{
+    font-family:'Concert One', cursive;
+    font-size: 2em;
+    color:#fff;
+    width:auto;
+    padding:20px;
+    background-color:#7299A8;
+    position: absolute;left: -10px; bottom: -10px; z-index: 99;
+    text-align:center;
+    border:  10px solid white;
+    border-radius: 10px;
 
-    }
-    
+}

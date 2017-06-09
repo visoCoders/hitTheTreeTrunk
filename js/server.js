@@ -6,7 +6,6 @@ process.title = 'node-chat';
  
 // Port where we'll run the websocket server
 var webSocketsServerPort = 1337;
- 
 // websocket and http servers
 var webSocketServer = require('websocket').server;
 var http = require('http');
@@ -18,10 +17,8 @@ var http = require('http');
 var history = [ ];
 // list of currently connected clients (users)
 var clients = [ ];
-
 var finalhandler = require('finalhandler');
 var serveStatic = require('serve-static');
-
 var serve = serveStatic("./");
 const url = require('url');
  
@@ -29,8 +26,10 @@ const url = require('url');
  * Helper function for escaping input strings
  */
 function htmlEntities(str) {
-    return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;')
-                      .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+
+    return String(str)
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
  
 // Array with some colors
