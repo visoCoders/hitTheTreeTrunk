@@ -36,6 +36,12 @@ $(function () {
     var connection = new WebSocket('ws://localhost:1337'); //192.168.0.227    
  
     connection.onopen = function () {
+        var naam = prompt('u moet een username ingeven','');
+        if(naam !=null){
+            console.log(naam);
+            player.name = naam;
+
+        }
         // first we want users to enter their names
         input.removeAttr('disabled');
         status.text('Choose name:');
@@ -102,7 +108,7 @@ $(function () {
     /**
      * Send mesage when user presses Enter key
      */
-    input.keydown(function(e) {
+   /* input.keydown(function(e) {
 
         if (e.keyCode === 13) {
             var msg = $(this).val();
@@ -127,14 +133,15 @@ $(function () {
 
         }
 
-    });
+    });*/
 
     score.innerHTML = 'Score: ' + scoreAmount;
 
     $('.log-container').on('click', function(e){
+
         if($(e.target).hasClass('target') && !$(e.target).hasClass('clicked')){
             $(e.target).addClass('clicked');
-            addScore(5);   
+            addScore(5);
             $(e.target).css("opacity" , 0.2);
         }else if($(e.target).hasClass('bad')){
             dead();
