@@ -36,16 +36,26 @@ $(function () {
     var connection = new WebSocket('ws://localhost:1337'); //192.168.0.227
 
     connection.onopen = function () {
-        var naam = prompt('u moet een username ingeven','');
-        if(naam !=null){
-            console.log(naam);
-            player.name = naam;
+        $('.loginContainer').addClass('show');
+        $('#btnEnterGame').click(function(){
+            var name = $('#gameUsername').val();
+            if(name == null || name == ''){
+                console.log('name cant be empty');
+                $('.login .error').text("Name can't be empty");
+            }else{
+                player.name = name;
+                status.text(name);
+                $('.loginContainer').removeClass('show');
+            }
+        });
+        //var naam = prompt('u moet een username ingeven','');
+        // if(naam !=null){
+        //     console.log(naam);
+        //     player.name = naam;
 
-        }
+        // }
         // first we want users to enter their names
-        input.removeAttr('disabled');
-        status.text(naam);
-        console.log('u bent geconnecteerd welkom');
+        
     };
 
     connection.onerror = function (error) {

@@ -11,8 +11,33 @@
     </head>
     <body>
         <div class="wrapper">
+            <div class="gameOverContainer">
+                <div class="gameOver">
+                    <h1>Game Over</h1>
+                    <p>Do you want to play again?</p>
+                    <div class="buttons">  
+                        <button id="btnYes">Yes</button> <button id="btnNo">No</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="loginContainer">
+                <div class="login">
+                    <h1>Username:</h1>
+                    <input type="text" id="gameUsername">
+                    <div class="error"></div>
+                    <div class="buttons">  
+                        <button id="btnEnterGame">Enter game</button>
+                    </div>
+                </div>
+            </div>
+
             <audio class="deadSound">
-                <source src="music/dead.aac" type="audio/aac">
+                <source src="music/dead.mp3" type="audio/mp3">
+            </audio>
+
+            <audio class="goodSound">
+                <source src="music/kat.mp3" type="audio/mp3">
             </audio>
             <div id="game">
                 <!-- hierin komt de totale game -->
