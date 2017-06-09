@@ -1,35 +1,41 @@
 @import url('https://fonts.googleapis.com/css?family=Fredoka+One');
-
 .boomstam {
 	width: 50px;
 	height: 200px;
 	position: relative;
 	margin: 10px 20px;
 }
-
 .black {
 	background-color: black;
 }
-
 .red {
 	background-color: red;
 }
-
 .score {
-	position: absolute; right: 0; top: 0; z-index: 99;
+	position: absolute; right: -10px; bottom: -10px; z-index: 99; font-size: 2em; font-family: 'Concert One', cursive; color: white; background: #7299A8; padding: 20px; z-index: -1;border:  10px solid white;
+  border-radius: 10px;
+
 }
+
+.added-score {
+
+	position:absolute; top: 50%;
+	z-index: 100;
+	font-size: 5em; text-align: center;
+	font-family: 'Concert One', cursive;
+
+	display: none;
+
+}
+
 body {
         overflow: hidden;
         background-image: url(../img/background.svg);
         background-position: center;
-				background-attachment: fixed;
-        background-repeat: repeat;
-        background-size: 20%;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: 100%;
         /* Animation */
-
-        background-image: url(../img/background.svg);
-        background-position: 5px 0px;
-        background-repeat: repeat-x;
 
         animation: animatedBackground 1s linear infinite;
 
@@ -43,65 +49,20 @@ body {
 }*/
 
 
-      div .log {
+div .log {
         height: 125px;
         width: 15%;
         float: left;
         margin: 15px 2.5%;
-      }
+}
 
-      .target {
-        background-image: url(../img/boomstam.svg);
-        background-repeat: no-repeat;
-        background-position: center;
-      }
+.target {
+    background-image: url(../img/boomstam.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
 
-      .bad {
-        background-image: url(../img/rotteboom.svg) !important;
-        background-repeat: no-repeat;
-        background-position: center;
-      }
-      .clicked{
-
-      }
-      .clearfix:after {
-         content: " "; /* Older browser do not support empty content */
-         visibility: hidden;
-         display: block;
-         height: 0;
-         clear: both;
-      }
-
-			html, body, .wrapper{ height: 100%; }
-      .log-container {
-        width: 100%;
-        overflow: hidden;
-        height: 100%;
-				position: relative;
-      }
-
-			.log-container .row{ position: absolute; transform: translate3d(0,0,0); width: 100%;
-				animation-name: rowmove;
-		    animation-duration: 4s;
-				animation-timing-function: linear;
-				animation-fill-mode: forwards;
-			}
-
-			@keyframes rowmove {
-			    from { transform: translate3d(0,0,0); }
-			    to { transform: translate3d(0,100vh,0); }
-			}
-
-    #user{
-    	color:#fff;
-    	background-color:blue;
-    	width:20%;
-    	padding:2%;
-			position: absolute;left: 0; top: 0; z-index: 99;
-
-    }
-
-    .show {
+.show {
           display: block !important;
     }
 
@@ -192,3 +153,52 @@ body {
           color:#ffffff;
           text-shadow: 1px 3px 0px rgba(0,0,0,0.2);
      }
+
+.bad {
+    background-image: url(../img/rotteboom.svg) !important;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.clicked{
+
+}
+.clearfix:after {
+     content: " "; /* Older browser do not support empty content */
+     visibility: hidden;
+     display: block;
+     height: 0;
+     clear: both;
+}
+
+        html, body, .wrapper{ height: 100%; }
+  .log-container {
+    width: 100%;
+    overflow: hidden;
+    height: 100%;  position: relative;
+  }
+
+.log-container .row{ position: absolute; transform: translate3d(0,0,0); width: 100%;
+    animation-name: rowmove;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes rowmove {
+    from { transform: translate3d(0,0,0); }
+    to { transform: translate3d(0,100vh,0); }
+}
+
+#user{
+    font-family:'Concert One', cursive;
+    font-size: 2em;
+    color:#fff;
+    width:auto;
+    padding:20px;
+    background-color:#7299A8;
+    position: absolute;left: -10px; bottom: -10px; z-index: 99;
+    text-align:center;
+    border:  10px solid white;
+    border-radius: 10px;
+
+}
