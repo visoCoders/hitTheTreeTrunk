@@ -1,6 +1,6 @@
 
 var $logContainer = $('.log-container');
-var animationDuration = 4;
+var animationDuration = 5;
 
 //Spawn Logs
 setInterval(function(){
