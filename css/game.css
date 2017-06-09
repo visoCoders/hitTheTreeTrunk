@@ -14,7 +14,8 @@
 }
 
 .score {
-	padding-left: 20px;
+	position: absolute;
+	right: 0; top: 0;
 }
 body {
         overflow: hidden;
@@ -24,7 +25,7 @@ body {
         background-repeat: repeat;
         background-size: 20%;
         /* Animation */
-         
+
         background-image: url(../img/background.svg);
         background-position: 5px 0px;
         background-repeat: repeat-x;
@@ -39,7 +40,7 @@ body {
 
 
 }
-    
+
 
       div .log {
         height: 125px;
@@ -80,6 +81,8 @@ body {
     	background-color:blue;
     	width:20%;
     	padding:2%;
+			position: absolute;
+			top: 0; left: 0;
 
 
     }
