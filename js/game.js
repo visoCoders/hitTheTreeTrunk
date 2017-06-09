@@ -33,7 +33,7 @@ $(function () {
     }
 
     // open connection
-    var connection = new WebSocket('ws://localhost:1337'); //192.168.0.227
+    var connection = new WebSocket('ws://192.168.9.239:1337'); //192.168.0.227
 
     connection.onopen = function () {
         $('.loginContainer').addClass('show');
