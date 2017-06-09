@@ -139,9 +139,15 @@ $(function () {
     score.innerHTML = 'Score: ' + scoreAmount;
 
     $('.log-container').on('click', function(e){
+<<<<<<< HEAD
 
         if($(e.target).hasClass('target')){
             addScore(5);
+=======
+        if($(e.target).hasClass('target') && !$(e.target).hasClass('clicked')){
+            $(e.target).addClass('clicked');
+            addScore(5);   
+>>>>>>> 3fbe8c703a745e60595d81d32ecbe7fc93ba1ddc
             $(e.target).css("opacity" , 0.2);
         }else if($(e.target).hasClass('bad')){
             dead();
@@ -150,12 +156,16 @@ $(function () {
     });
 
     function dead(){
-        console.log('you died');
         score.innerHTML = 'You died! Score: ' + scoreAmount;
         player.score = scoreAmount;
         player.dead = true;
         scoreAmount = 0;
         connection.send(JSON.stringify(player));
+        if(confirm('YOU DIED! Score: ' + scoreAmount + ' \n Do you want to play again?') == true){
+            location.reload();
+        }else{
+
+        }
     }
 
     function addScore(points){
