@@ -40,12 +40,12 @@ $(function () {
         if(naam !=null){
             console.log(naam);
             player.name = naam;
-
         }
         // first we want users to enter their names
         input.removeAttr('disabled');
-        status.text('Choose name:');
+        status.text(naam);
         console.log('u bent geconnecteerd welkom');
+        s
     };
  
     connection.onerror = function (error) {

@@ -87,10 +87,12 @@ body {
 			}
 
     #user{
+        font-family:'helvetica';
     	color:#fff;
-    	background-color:blue;
-    	width:20%;
-    	padding:2%;
-			position: absolute;left: 0; top: 0; z-index: 99;
+    	width:10%;
+        padding:0.5%;
+        background-color:blue;
+        position: absolute;left: 0; top: 0; z-index: 99;
+        text-align:center;
 
     }
