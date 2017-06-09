@@ -43,7 +43,9 @@
         background-repeat: no-repeat;
         background-position: center;
       }
+      .clicked{
 
+      }
       .clearfix:after {
          content: " "; /* Older browser do not support empty content */
          visibility: hidden;
