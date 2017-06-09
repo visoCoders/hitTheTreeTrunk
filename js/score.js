@@ -55,8 +55,9 @@ $(function () {
               $('.scoreBox td[data-user="'+player.name+'"]').parent().remove();  
             }
 
-            $('.scoreBox .rows').append('<tr '+((player.dead)? 'style="color:red"':'')+'>'+
-                            '<td data-user="'+player.name+'">'+player.name+'</td>'+
+            $('.scoreBox .rows').append(
+                        '<tr '+((player.dead)? 'style="color:red"':'')+'>'+
+                            '<td data-user="'+player.name+'">'+((player.dead)?'<img width="22px" src="../img/skull.png">':'')+' '+player.name+'</td>'+
                             '<td>'+player.score+'</td>'+
                             '<td></td>'+
                         '</tr>');

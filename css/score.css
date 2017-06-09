@@ -21,7 +21,9 @@ body{
 
 .board_title{
 	position: fixed;
-	margin-left: 13%;
+	bottom: 0;
+	margin-left: 12.5%;
+	margin-bottom: 1.5%;
 }
 
 h1{
