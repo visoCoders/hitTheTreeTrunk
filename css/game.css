@@ -81,7 +81,7 @@ div .log {
     .gameOver, .login {
           height: 330px;
           width: 500px;
-          background-color:#00aaff;
+          background-color:#669AA9;
           border-radius: 10px;
           margin: auto;
           position: absolute;
@@ -116,7 +116,7 @@ div .log {
      }
 
      .buttons button {
-          background: #2980b9;
+          background: #446873;
           border-radius: 8px;
           color: white;
           font-family: 'Fredoka One', cursive;
@@ -126,7 +126,7 @@ div .log {
           cursor: pointer;
           outline: none;
           margin:0 10px;
-          box-shadow: 0px 6px 0 #1c608c;
+          box-shadow: 0px 6px 0 #334f56;
      }
 
      .buttons button:hover {
