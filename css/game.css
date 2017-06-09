@@ -32,7 +32,7 @@ body {
         background-image: url(../img/background.svg);
         background-position: center;
         background-attachment: fixed;
-        background-repeat: no-repeat;
+        background-repeat(y): no-repeat;
         background-size: 100%;
         /* Animation */
 
