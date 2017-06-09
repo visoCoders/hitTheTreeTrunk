@@ -138,19 +138,13 @@ $(function () {
     score.innerHTML = 'Score: ' + scoreAmount;
 
     $('.log-container').on('click', function(e){
-<<<<<<< HEAD
 
-        if($(e.target).hasClass('target')){
-            addScore(5);
-=======
         if($(e.target).hasClass('target') && !$(e.target).hasClass('clicked')){
             $(e.target).addClass('clicked');
-            addScore(5);   
->>>>>>> 3fbe8c703a745e60595d81d32ecbe7fc93ba1ddc
+            addScore(5);
             $(e.target).css("opacity" , 0.2);
         }else if($(e.target).hasClass('bad')){
             dead();
-
         }
     });
 
