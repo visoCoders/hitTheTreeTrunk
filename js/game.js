@@ -36,16 +36,26 @@ $(function () {
     var connection = new WebSocket('ws://localhost:1337'); //192.168.0.227
 
     connection.onopen = function () {
-        var naam = prompt('u moet een username ingeven','');
-        if(naam !=null){
-            console.log(naam);
-            player.name = naam;
+        $('.loginContainer').addClass('show');
+        $('#btnEnterGame').click(function(){
+            var name = $('#gameUsername').val();
+            if(name == null || name == ''){
+                console.log('name cant be empty');
+                $('.login .error').text("Name can't be empty");
+            }else{
+                player.name = name;
+                status.text(name);
+                $('.loginContainer').removeClass('show');
+            }
+        });
+        //var naam = prompt('u moet een username ingeven','');
+        // if(naam !=null){
+        //     console.log(naam);
+        //     player.name = naam;
 
-        }
+        // }
         // first we want users to enter their names
-        input.removeAttr('disabled');
-        status.text(naam);
-        console.log('u bent geconnecteerd welkom');
+        
     };
 
     connection.onerror = function (error) {
@@ -142,7 +152,12 @@ $(function () {
         if($(e.target).hasClass('target') && !$(e.target).hasClass('clicked')){
 
             $(e.target).addClass('clicked');
-            addScore(5);
+
+            //cursorPosition
+            var xpos = e.clientX;
+            var ypos = e.clientY;
+
+            addScore(5, xpos, ypos);
             document.querySelector('.goodSound').play();
             $(e.target).css("opacity" , 0.2);
             console.log(e.target);
@@ -165,12 +180,12 @@ $(function () {
         }
     }
 
-    function addScore(points){
+    function addScore(points, xpos, ypos){
         scoreAmount = scoreAmount += points;
         score.innerHTML = 'Score: ' + scoreAmount;
         player.score = scoreAmount;
 
-        $('.added-score').fadeIn(100).fadeOut(100);
+        $('.added-score').css('left', xpos).css('top', ypos).fadeIn(100).delay(300).fadeOut(100);
 
         connection.send(JSON.stringify(player));
     }
