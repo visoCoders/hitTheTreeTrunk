@@ -14,8 +14,7 @@
 }
 
 .score {
-	position: absolute;
-	right: 0; top: 0;
+	position: absolute; right: 0; top: 0;
 }
 body {
         overflow: hidden;
@@ -33,13 +32,13 @@ body {
         animation: animatedBackground 1s linear infinite;
 
 }
-@keyframes animatedBackground {
+/*@keyframes animatedBackground {
 0% { background-position: 0 0; }
 50%{ background-position: 0 10%; }
 100%{ background-position: 0 20%; }
 
 
-}
+}*/
 
 
       div .log {
@@ -81,8 +80,6 @@ body {
     	background-color:blue;
     	width:20%;
     	padding:2%;
-			position: absolute;
-			top: 0; left: 0;
-
+			position: absolute;left: 0; top: 0;
 
     }
