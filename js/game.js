@@ -168,16 +168,15 @@ $(function () {
 
     function dead(){
         document.querySelector('.deadSound').play();
-        score.innerHTML = 'You died! Score: ' + scoreAmount;
+        $('.gameOverContainer').addClass('show');
+        $('.gameOver .text').append('You died bitch!<br>Score: ' + scoreAmount + '<br><br>Play again?');
+        $('#btnYes').click(function(){
+            location.reload();
+        });
         player.score = scoreAmount;
         player.dead = true;
         scoreAmount = 0;
         connection.send(JSON.stringify(player));
-        if(confirm('YOU DIED! Score: ' + scoreAmount + ' \n Do you want to play again?') == true){
-            location.reload();
-        }else{
-
-        }
     }
 
     function addScore(points, xpos, ypos){
