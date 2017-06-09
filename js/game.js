@@ -44,7 +44,7 @@ $(function () {
         }
         // first we want users to enter their names
         input.removeAttr('disabled');
-        status.text('Choose name:');
+        status.text(naam);
         console.log('u bent geconnecteerd welkom');
     };
 
@@ -140,13 +140,10 @@ $(function () {
     $('.log-container').on('click', function(e){
 
         if($(e.target).hasClass('target') && !$(e.target).hasClass('clicked')){
+
             $(e.target).addClass('clicked');
-
-            //clickposition
-            var currentPosX = e.clientX;
-            var currentPosY = e.clientY;
-
-            addScore(5, currentPosX, currentPosY);
+            addScore(5);
+            document.querySelector('.goodSound').play();
             $(e.target).css("opacity" , 0.2);
             console.log(e.target);
         }else if($(e.target).hasClass('bad')){
@@ -168,13 +165,12 @@ $(function () {
         }
     }
 
-    function addScore(points, xpos, ypos){
+    function addScore(points){
         scoreAmount = scoreAmount += points;
         score.innerHTML = 'Score: ' + scoreAmount;
         player.score = scoreAmount;
 
-
-        $('.added-score').css('left', xpos).css('top', ypos).fadeIn(100).delay(300).fadeOut(100);
+        $('.added-score').fadeIn(100).fadeOut(100);
 
         connection.send(JSON.stringify(player));
     }
