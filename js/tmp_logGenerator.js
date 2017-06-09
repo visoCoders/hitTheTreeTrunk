@@ -34,7 +34,7 @@ setInterval(function(){
 setInterval(function(){
 
   var lastRow = $logContainer.find('.row:last-child');
-  console.log(lastRow);
+  // console.log(lastRow);
 
   if(lastRow.offset().top > window.outerHeight){
 
