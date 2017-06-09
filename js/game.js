@@ -141,7 +141,12 @@ $(function () {
 
         if($(e.target).hasClass('target') && !$(e.target).hasClass('clicked')){
             $(e.target).addClass('clicked');
-            addScore(5);
+
+            //clickposition
+            var currentPosX = e.clientX;
+            var currentPosY = e.clientY;
+
+            addScore(5, currentPosX, currentPosY);
             $(e.target).css("opacity" , 0.2);
             console.log(e.target);
         }else if($(e.target).hasClass('bad')){
@@ -163,12 +168,13 @@ $(function () {
         }
     }
 
-    function addScore(points){
+    function addScore(points, xpos, ypos){
         scoreAmount = scoreAmount += points;
         score.innerHTML = 'Score: ' + scoreAmount;
         player.score = scoreAmount;
 
-        $('.added-score').fadeIn(100).fadeOut(100);
+
+        $('.added-score').css('left', xpos).css('top', ypos).fadeIn(100).delay(300).fadeOut(100);
 
         connection.send(JSON.stringify(player));
     }
