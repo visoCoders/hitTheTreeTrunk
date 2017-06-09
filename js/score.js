@@ -50,6 +50,14 @@ $(function () {
         try {
             var json = JSON.parse(message.data);
             var player = JSON.parse(json.data.utf8Data);
+
+            var newScore = player.score;
+            var previousScore = localStorage.getItem(player.name);
+
+            if (newScore > previousScore) {
+                previousScore = newScore;
+                localStorage.setItem(player.name,newScore);
+            }
             
             if($('.scoreBox td[data-user="'+player.name+'"]').length > 0){
               $('.scoreBox td[data-user="'+player.name+'"]').parent().remove();  
@@ -59,7 +67,7 @@ $(function () {
                         '<tr '+((player.dead)? 'style="color:red"':'')+'>'+
                             '<td data-user="'+player.name+'">'+((player.dead)?'<img width="22px" src="../img/skull.png">':'')+' '+player.name+'</td>'+
                             '<td>'+player.score+'</td>'+
-                            '<td></td>'+
+                            '<td>'+previousScore+'</td>'+
                         '</tr>');
 
         } catch (e) {
