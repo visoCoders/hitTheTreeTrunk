@@ -30,6 +30,8 @@ setInterval(function(){
 
 }, 1000);
 
+function malel (){ animationDuration = 10; }
+
 //Clear logs out of screen
 setInterval(function(){
 
