@@ -1,15 +1,13 @@
 $(function () {
     "use strict";
- 
     // if user is running mozilla then use it's built-in WebSocket
     window.WebSocket = window.WebSocket || window.MozWebSocket;
- 
     // if browser doesn't support WebSocket, just show some notification and exit
     if (!window.WebSocket) {
-        console.log($('<p>', { text: 'Sorry, but your browser doesn\'t '
-                                    + 'support WebSockets.'} ));
+        console.log($('<p>', { text: 'Sorry, but your browser doesn\'t ' + 'support WebSockets.'} ));
         input.hide();
         $('span').hide();
+
         return;
     }
  
