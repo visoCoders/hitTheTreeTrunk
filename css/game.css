@@ -23,7 +23,7 @@
 	z-index: 100;
 	font-size: 5em; text-align: center;
 	font-family: 'Concert One', cursive;
-
+	
 	display: none;
 
 }
@@ -33,7 +33,7 @@ body {
         background-image: url(../img/background.svg);
         background-position: center;
         background-attachment: fixed;
-        background-repeat: no-repeat;
+        background-repeat(y): no-repeat;
         background-size: 100%;
         /* Animation */
 
