@@ -1,6 +1,6 @@
 
 var $logContainer = $('.log-container');
-var spawnTime = 1000;
+var animationDuration = 4;
 
 //Spawn Logs
 setInterval(function(){
@@ -22,10 +22,13 @@ setInterval(function(){
 
   $logContainer.prepend(row);
 
-  spawnTime-=10;
-  console.log(spawnTime);
+  animationDuration*=0.99;
+  console.log(animationDuration);
 
-}, spawnTime);
+  var $firstchild = $logContainer.find('.row:first-child');
+  $firstchild.css('animation-duration', animationDuration + 's');
+
+}, 1000);
 
 //Clear logs out of screen
 setInterval(function(){
@@ -39,7 +42,7 @@ setInterval(function(){
 
   }
 
-}, 1005);
+}, 1000);
 
 //Die is skip log
 // setInterval(function(){

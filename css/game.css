@@ -25,10 +25,6 @@ body {
         background-size: 20%;
         /* Animation */
 
-        background-image: url(../img/background.svg);
-        background-position: 5px 0px;
-        background-repeat: repeat-x;
-
         animation: animatedBackground 1s linear infinite;
 
 }
