@@ -22,8 +22,11 @@
 	z-index: 100;
 	font-size: 5em; text-align: center;
 	font-family: 'Concert One', cursive;
-	
+	color: #f6f6f6;
 	display: none;
+    background: #7299A8;;
+    padding: 30px;
+    border-radius: 50%;
 
 }
 
