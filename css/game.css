@@ -16,6 +16,18 @@
 .score {
 	position: absolute; right: 0; top: 0; z-index: 99;
 }
+
+.added-score {
+
+	position:absolute; top: 50%;
+	width:100%; z-index: 100;
+	font-size: 5em; text-align: center;
+	font-family: 'Concert One', cursive;
+
+	display: none;
+
+}
+
 body {
         overflow: hidden;
         background-image: url(../img/background.svg);
