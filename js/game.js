@@ -113,7 +113,7 @@ $(function () {
                 return;
             }
             // send the message as an ordinary text
-            //connection.send(msg);
+            connection.send(player);
             $(this).val('');
             // disable the input field to make the user wait until server
             // sends back response
@@ -137,7 +137,6 @@ $(function () {
             addScore(5);   
             $(e.target).css("opacity" , 0.2);
         }else if($(e.target).hasClass('bad')){
-             location.reload();
             dead();
 
         }
@@ -150,8 +149,6 @@ $(function () {
         player.dead = true;
         scoreAmount = 0;
         connection.send(JSON.stringify(player));
-
-        console.log(player);
     }
 
     function addScore(points){
