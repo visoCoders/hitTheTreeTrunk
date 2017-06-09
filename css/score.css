@@ -19,6 +19,11 @@ body{
 	margin: auto;
 }
 
+.board_title{
+	position: fixed;
+	margin-left: 13%;
+}
+
 h1{
 	padding-top: 2%;
 	font-weight: bold;
@@ -30,7 +35,6 @@ h1{
 h2{
 	font-size: 2.4em;
 	text-align: center;
-	margin-top: 88%;
 	color: #dccb38;
 }
 

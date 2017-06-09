@@ -46,7 +46,7 @@ $(function () {
         // try to parse JSON message. Because we know that the server always returns
         // JSON this should work without any problem but we should make sure that
         // the massage is not chunked or otherwise damaged.
-        console.log(message);
+       console.log(message);
         try {
             var json = JSON.parse(message.data);
             var player = JSON.parse(json.data.utf8Data);
