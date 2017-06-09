@@ -1,5 +1,6 @@
 
 var $logContainer = $('.log-container');
+var spawnTime = 1000;
 
 //Spawn Logs
 setInterval(function(){
@@ -21,7 +22,10 @@ setInterval(function(){
 
   $logContainer.prepend(row);
 
-}, 1000);
+  spawnTime-=10;
+  console.log(spawnTime);
+
+}, spawnTime);
 
 //Clear logs out of screen
 setInterval(function(){
@@ -35,26 +39,26 @@ setInterval(function(){
 
   }
 
-}, 4005);
+}, 1005);
 
 //Die is skip log
-setInterval(function(){
-
-  var lastRow = $logContainer.find('.row:last-child');
-  var children = lastRow.children();
-
-  if(lastRow.offset().top > window.outerHeight){
-
-    for(i=0;i<children.length;i++){
-
-      if($(children[i]).hasClass('target')){
-
-        alert()
-
-      }
-
-    }
-
-  }
-
-}, 4005);
+// setInterval(function(){
+//
+//   var lastRow = $logContainer.find('.row:last-child');
+//   var children = lastRow.children();
+//
+//   if(lastRow.offset().top > window.outerHeight){
+//
+//     for(i=0;i<children.length;i++){
+//
+//       if($(children[i]).hasClass('target')){
+//
+//         alert('Je hebt een boomstam geskipt, amateur.');
+//
+//       }
+//
+//     }
+//
+//   }
+//
+// }, 1000);
