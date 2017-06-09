@@ -36,6 +36,7 @@ $(function () {
     var connection = new WebSocket('ws://localhost:1337'); //192.168.0.227    
  
     connection.onopen = function () {
+        prompt('u moet een username ingeven','');
         // first we want users to enter their names
         input.removeAttr('disabled');
         status.text('Choose name:');
