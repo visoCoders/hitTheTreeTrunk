@@ -17,7 +17,7 @@ $(function () {
     var connection = new WebSocket('ws://localhost:1337'); //192.168.0.227
  
     connection.onopen = function () {
-        
+        console.log('websocket connected');
     };
  
     connection.onerror = function (error) {
@@ -46,16 +46,25 @@ $(function () {
         // try to parse JSON message. Because we know that the server always returns
         // JSON this should work without any problem but we should make sure that
         // the massage is not chunked or otherwise damaged.
+        console.log(message);
         try {
             var json = JSON.parse(message.data);
             var player = JSON.parse(json.data.utf8Data);
-            console.log(player.score);
+            
+            if($('.scoreBox td[data-user="'+player.name+'"]').length > 0){
+              $('.scoreBox td[data-user="'+player.name+'"]').parent().remove();  
+            }
+
+            $('.scoreBox .rows').append('<tr '+((player.dead)? 'style="color:red"':'')+'>'+
+                            '<td data-user="'+player.name+'">'+player.name+'</td>'+
+                            '<td>'+player.score+'</td>'+
+                            '<td></td>'+
+                        '</tr>');
+
         } catch (e) {
             console.log('This doesn\'t look like a valid JSON: ', message.data);
             return;
         }
- 
-        console.log(json);
     };
  
     
