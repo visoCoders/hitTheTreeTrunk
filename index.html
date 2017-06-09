@@ -11,27 +11,42 @@
     </head>
     <body>
         <div class="wrapper">
-            
-            <audio autoplay loop>
-                <source src="music/gek.aac" type="audio/aac">
+            <div class="gameOverContainer">
+                <div class="gameOver">
+                    <h1>Game Over</h1>
+                    <p>Do you want to play again?</p>
+                    <div class="buttons">  
+                        <button id="btnYes">Yes</button> <button id="btnNo">No</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="loginContainer">
+                <div class="login">
+                    <h1>Username:</h1>
+                    <input type="text" id="gameUsername">
+                    <div class="error"></div>
+                    <div class="buttons">  
+                        <button id="btnEnterGame">Enter game</button>
+                    </div>
+                </div>
+            </div>
+
+            <audio class="deadSound">
+                <source src="music/dead.mp3" type="audio/mp3">
             </audio>
 
+            <audio class="goodSound">
+                <source src="music/kat.mp3" type="audio/mp3">
+            </audio>
             <div id="game">
                 <!-- hierin komt de totale game -->
             </div>
-
             <div id="user">
-                
                 <span id="status">Connecting......</span>
-
-
-           
             </div>
-        
             <p class="score">Score: 0</p>
-
-           
-
+            <h1 class="added-score">+5</h1>
             <div class="log-container">
                 <div class="row clearfix">
                 <div class="log"></div>
@@ -39,12 +54,10 @@
                 <div class="log"></div>
                 <div class="log"></div>
                 <div class="log"></div>
-         </div>
-    </div>
-   
-    
+                </div>
+            </div>
         </div>
- 
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <script src="js/game.js"></script>
         <script src="js/score.js"></script>
