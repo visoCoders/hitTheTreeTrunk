@@ -1,9 +1,9 @@
 $(function () {
     "use strict";
- 
+
     // if user is running mozilla then use it's built-in WebSocket
     window.WebSocket = window.WebSocket || window.MozWebSocket;
- 
+
     // if browser doesn't support WebSocket, just show some notification and exit
     if (!window.WebSocket) {
         console.log($('<p>', { text: 'Sorry, but your browser doesn\'t '
@@ -12,14 +12,14 @@ $(function () {
         $('span').hide();
         return;
     }
- 
+
     // open connection
     var connection = new WebSocket('ws://localhost:1337'); //192.168.0.227
- 
+
     connection.onopen = function () {
         console.log('websocket connected');
     };
- 
+
     connection.onerror = function (error) {
         // just in there were some problems with conenction...
         console.log($('<p>', { text: 'Sorry, but there\'s some problem with your '
@@ -40,7 +40,7 @@ $(function () {
             colors.push(myColor);
         }
     };
- 
+
     // most important part - incoming messages
     connection.onmessage = function (message) {
         // try to parse JSON message. Because we know that the server always returns
@@ -50,9 +50,9 @@ $(function () {
         try {
             var json = JSON.parse(message.data);
             var player = JSON.parse(json.data.utf8Data);
-            
+
             if($('.scoreBox td[data-user="'+player.name+'"]').length > 0){
-              $('.scoreBox td[data-user="'+player.name+'"]').parent().remove();  
+              $('.scoreBox td[data-user="'+player.name+'"]').parent().remove();
             }
 
             $('.scoreBox .rows').append(
@@ -67,8 +67,8 @@ $(function () {
             return;
         }
     };
- 
-    
+
+
     /**
      * This method is optional. If the server wasn't able to respond to the
      * in 3 seconds then show some error message to notify the user that
@@ -81,11 +81,11 @@ $(function () {
                                                  + 'with the WebSocket server.');
         }
     }, 3000);
- 
+
     /**
      * Display player info.
      */
-    function addMessage(player) { 
+    function addMessage(player) {
         content.prepend();
     }
 });

@@ -22,7 +22,7 @@ setInterval(function(){
 
   $logContainer.prepend(row);
 
-  animationDuration*=0.99;
+  animationDuration*=0.999;
   console.log(animationDuration);
 
   var $firstchild = $logContainer.find('.row:first-child');
@@ -34,7 +34,7 @@ setInterval(function(){
 setInterval(function(){
 
   var lastRow = $logContainer.find('.row:last-child');
-  console.log(lastRow);
+  // console.log(lastRow);
 
   if(lastRow.offset().top > window.outerHeight){
 
