@@ -21,7 +21,7 @@ setInterval(function(){
 
   $logContainer.prepend(row);
 
-}, 950);
+}, 1000);
 
 //Clear logs out of screen
 setInterval(function(){
@@ -35,9 +35,9 @@ setInterval(function(){
 
   }
 
-}, 1000);
+}, 4005);
 
-//Die if skip log
+//Die is skip log
 setInterval(function(){
 
   var lastRow = $logContainer.find('.row:last-child');
@@ -49,7 +49,7 @@ setInterval(function(){
 
       if($(children[i]).hasClass('target')){
 
-        alert('u dood');
+        alert()
 
       }
 
@@ -57,4 +57,4 @@ setInterval(function(){
 
   }
 
-}, 1000);
+}, 4005);
