@@ -150,6 +150,7 @@ $(function () {
     });
 
     function dead(){
+        document.querySelector('.deadSound').play();
         score.innerHTML = 'You died! Score: ' + scoreAmount;
         player.score = scoreAmount;
         player.dead = true;
@@ -167,8 +168,7 @@ $(function () {
         score.innerHTML = 'Score: ' + scoreAmount;
         player.score = scoreAmount;
 
-        //Add +5 visually
-        
+        $('.added-score').fadeIn(100).fadeOut(100);
 
         connection.send(JSON.stringify(player));
     }
