@@ -14,7 +14,7 @@
 }
 
 .score {
-	position: absolute; right: -10px; bottom: -10px; z-index: 99; font-size: 3em; font-family: 'Concert One', cursive; color: white; background: #7299A8; padding: 20px; z-index: -1;border:  10px solid white;
+	position: absolute; right: -10px; bottom: -10px; z-index: 99; font-size: 2em; font-family: 'Concert One', cursive; color: white; background: #7299A8; padding: 20px; z-index: -1;border:  10px solid white;
         border-radius: 10px;
 
 }
@@ -90,12 +90,12 @@ body {
 
     #user{
         font-family:'Concert One', cursive;
-        font-size: 3em;
+        font-size: 2em;
     	color:#fff;
     	width:auto;
-        padding:0.5%;
+        padding:20px;
         background-color:#7299A8;
-        position: absolute;left: -10px; top: -10px; z-index: 99;
+        position: absolute;left: -10px; bottom: -10px; z-index: 99;
         text-align:center;
         border:  10px solid white;
         border-radius: 10px;
