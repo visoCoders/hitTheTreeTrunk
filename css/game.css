@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One');
+
 .boomstam {
 	width: 50px;
 	height: 200px;
@@ -96,3 +98,32 @@ body {
 			position: absolute;left: 0; top: 0; z-index: 99;
 
     }
+
+     .gameOverContainer {
+          width: 100%;
+          height: 100vh;
+          background-color:black;
+          z-index:998;
+          opacity:0.2;
+     }
+
+    .gameOver {
+      height: 450px;
+      width: 600px;
+      background-color:#00aaff;
+      border-radius: 10px;
+      margin: auto;
+      position: absolute;
+      top: 0; left: 0; bottom: 0; right: 0;
+      z-index: 999;
+      padding:10px;
+      box-sizing: border-box;
+    }
+
+     .gameOver h1 {
+          color:white;
+          font-family: 'Fredoka One', cursive;
+          text-align: center;
+          font-size:40px;
+          padding-top:20px;
+     }

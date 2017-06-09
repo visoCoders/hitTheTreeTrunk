@@ -138,7 +138,6 @@ $(function () {
             $(e.target).css("opacity" , 0.2);
         }else if($(e.target).hasClass('bad')){
             dead();
-
         }
     });
 
