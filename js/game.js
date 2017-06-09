@@ -140,8 +140,10 @@ $(function () {
     $('.log-container').on('click', function(e){
 
         if($(e.target).hasClass('target') && !$(e.target).hasClass('clicked')){
+
             $(e.target).addClass('clicked');
             addScore(5);
+            document.querySelector('.goodSound').play();
             $(e.target).css("opacity" , 0.2);
         }else if($(e.target).hasClass('bad')){
             dead();
